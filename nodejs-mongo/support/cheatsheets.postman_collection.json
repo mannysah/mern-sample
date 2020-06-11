@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "1e6d225e-bb3a-44e9-8eeb-038b0539c9de",
+		"name": "cheatsheets",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:4000/cheatsheets/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"cheatsheets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:4000/cheatsheets/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"cheatsheets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"todo_description\" : \"New Todo\",\n\t\"todo_responsible\" : \"responsi\",\n\t\"todo_priority\" : \"Low\",\n\t\"todo_completed\" : false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/cheatsheets/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"cheatsheets",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

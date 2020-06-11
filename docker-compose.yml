@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  node-mongo-cheat:
+    build:
+      context: ./nodejs-mongo
+    image: node-mongo-cheat:latest
+    ports:
+      # 3000:3000 # this is not working for some reason
+      - target: 4000
+        published: 4000
+        protocol: tcp
+        mode: host
+    depends_on: 
+    - mongo
+
+  react:
+    build: 
+      context: ./react
+    image: react-cheat:latest
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+        mode: host
+
+  mongo:
+    image: mongo
+    ports:
+      - target: 27017
+        published: 27017
+        protocol: tcp
+        mode: host
+
