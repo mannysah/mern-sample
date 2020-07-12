@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 // let mongodbURI = process.env.mongodburi || "127.0.0.1";
 let mongodbURI = process.env.MONGO_HOST;
-mongoose.connect('mongodb://mongo:27017/cheatsheets', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/cheatsheets', { useNewUrlParser: true });
 
 const connection = mongoose.connection;
 
@@ -23,6 +23,7 @@ connection.once('open', function() {
 const cheatsheetRoutes = express.Router();
 
 app.use('/cheatsheets', cheatsheetRoutes);
+
 
 cheatsheetRoutes.route('/').get(function(req, res) {
     Cheatsheet.find(function(err, cheatsheets) {

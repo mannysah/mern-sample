@@ -1,9 +1,12 @@
 FROM node:13
 
 WORKDIR /usr/src/app
+ENV http_proxy=http://cloud-cluster122197-swg.ibosscloud.com:8009 https_proxy=http://cloud-cluster122197-swg.ibosscloud.com:8009 HTTP_PROXY=http://cloud-cluster122197-swg.ibosscloud.com:8009 HTTPS_PROXY=http://cloud-cluster122197-swg.ibosscloud.com:8009
 
 COPY package*.json ./
 
+RUN npm config set registry="http://registry.npmjs.org/"
+RUN npm cache clean --force
 RUN npm install
 
 COPY . .
