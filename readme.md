@@ -7,4 +7,5 @@ Clone the repo
 
 - Run `docker-compose up` 
 - Go to http://localhost:3000/ and app should be up
+- Ctrl+C to stop execution.
 
